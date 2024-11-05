@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import NavItem from "./NavItem";
+import SearchBar from "./SearchBar";
 import {
-  faSearch,
   faBell,
   faBriefcase,
   faHouse,
@@ -28,45 +29,29 @@ export default function Navbar() {
 
 function LeftSideNavBar() {
   return (
-    <li className="flex flex-row gap-5 items-center w-1/2">
+    <li className="flex flex-row gap-5 items-center w-[25%] md:w-[30%] justify-around xl:w-1/2">
       <Link to="/">
         <FontAwesomeIcon
           icon={faLinkedin}
           className="text-blue-600 text-4xl hover:text-blue-700"
         />
       </Link>
-      <label
-        className="input input-bordered w-[450px] h-[40px]
-            bg-slate-200 flex items-center text-black gap-2"
-      >
-        <FontAwesomeIcon icon={faSearch} />
-        <input type="text" className="" placeholder="Search" />
-      </label>
+      <SearchBar/>
     </li>
   );
 }
 
 function RightSideNavBar() {
   return (
-    <li className="flex flex-row  items-center justify-around w-1/2">
-      <div className="flex flex-row gap-3 items-center ">
-        <FontAwesomeIcon icon={faHouse} className="text-3xl" />
-        <p>Home</p>
-      </div>
-      <div className="flex flex-row gap-3 items-center ">
-        <FontAwesomeIcon icon={faBriefcase} className="text-3xl" />
-        <p>Job Requests</p>
-      </div>
-      <div className="flex flex-row gap-3 items-center">
-        <div className="relative">
-          <div className="bg-red-600 text-xs text-center font-bold w-[15px] h-[15px]
-           text-white rounded-full absolute right-0">
-            2
-          </div>
-          <FontAwesomeIcon icon={faBell} className="text-3xl" />
-        </div>
-        <p>Notifications</p>
-      </div>
+    <li className="flex flex-row  items-center justify-around w-[75%] md:w-[60%] xl:w-1/2">
+      <NavItem to="/" icon={faHouse} text="Home" />
+      <NavItem
+        to="/Job-Requests/1234"
+        icon={faBriefcase}
+        text="Job Requests"
+        count={2}
+      />
+      <NavItem icon={faBell} text="Notifications" count={2} />
       <details className="dropdown dropdown-end">
         <summary className="avatar flex flex-col items-center pt-[5px]">
           <div className="w-10 rounded-full cursor-pointer">

@@ -1,5 +1,6 @@
 package linkedin.server.server.Model;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -38,10 +39,12 @@ public abstract class Account {
     @NotNull
     private String password;
     private String description;
-
     @OneToMany(mappedBy = "follower")
     private Set<Follower> followers = new HashSet<>();
 
     @OneToMany(mappedBy = "followed")
     private Set<Follower> following = new HashSet<>();
+
+    @OneToMany
+    private ArrayList<Notification> notifications = new ArrayList<>();
 }

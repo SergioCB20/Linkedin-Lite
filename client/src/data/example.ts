@@ -3,6 +3,7 @@ import { Company, User, JobApplication, JobApplicationStatus, JobPost } from "..
 export const exampleCompany: Company = {
     id: "uuid-company-5678",
     name: "Tech Corp",
+    imageUrl:"https://pbs.twimg.com/profile_images/1607365667950305283/HpdPjItg_400x400.jpg",
     jobPosts: [],
     workers: []
   };

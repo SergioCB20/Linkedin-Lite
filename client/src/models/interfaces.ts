@@ -17,6 +17,7 @@ export interface Company {
   id: UUID;
   name: string;
   jobPosts: JobPost[];
+  imageUrl?:string;
   workers: User[];
 }
 

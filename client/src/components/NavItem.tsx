@@ -13,7 +13,7 @@ const NavItem: React.FC<NavItemProps> = ({ to, icon, text, count = 0 }) => {
   return (
     <Link
       to={to || '#'}
-      className="flex flex-row gap-3 items-center hover:text-black transition-all duration-500 cursor-pointer"
+      className="flex flex-row gap-3 text-slate-400 items-center hover:text-black transition-all duration-500 cursor-pointer"
     >
       <div className="relative">
         {count > 0 && (
